@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    background-color: #121212;
+    color: #fff;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #4eed63 25%, transparent 25%, transparent 50%, #4eed63 50%, #4eed63 75%, transparent 75%, transparent);
+    background-size: 200% 200%;
+    animation: neonStripes 7s infinite;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+@keyframes neonStripes {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width:100%;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    color: white;
+    text-shadow: #4eed63;
+    text-align: right;
+}
+
+.hero-content p {
+    font-size: 24px;
+    max-width: 500px;
+    width: 40%;
+}
+
+/* Restante do CSS permanece igual */
+
+.block{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+#navbar {
+    background-color: #1f1f1f;
+    padding: 10px 20px;
+    position: fixed;
+    top: -100px;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    color: #4eed63;
+    font-size: 24px;
+}
+
+.logo span {
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #4eed63;
+}
+
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #4eed63;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 36px;
+    position: relative;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.skill-bubble {
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.skill-bubble::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 2px #4eed63;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.skill-bubble i {
+    font-size: 32px;
+    color: #4eed63;
+}
+
+.skill-bubble:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 5px #4eed63;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    color: #4eed63;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.project-info p {
+    color: #bbb;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    background-color: #252525;
+}
+
+.filter {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.filter button {
+    background-color: #4eed63;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter button:hover {
+    background-color: #3ec252;
+}
+
+#contact {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #1f1f1f;
+    border-top: 3px solid #4eed63;
+}
+
+.contact-info {
+    margin-bottom: 40px;
+}
+
+.contact-info a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #3ec252;
+    text-decoration:underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-top: 3px solid #4eed63;
+}
