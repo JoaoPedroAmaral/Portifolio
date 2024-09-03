@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
 body {
     margin: 0;
     padding: 0;
@@ -6,17 +9,113 @@ body {
     color: #fff;
 }
 
+
+.container {
+    display: flex;
+    align-items: center;
+    margin:0;
+    padding:0;
+  }
+  
+  svg {
+      display: block;
+      font: 10.5em 'Montserrat';
+      width: 350px;
+      margin: 0;
+      padding:0;
+  }
+  
+  .text-copy {
+      fill: none;
+      stroke: white;
+      stroke-dasharray: 6% 29%;
+      stroke-width: 5px;
+      stroke-dashoffset: 0%;
+      animation: stroke-offset 5.5s infinite linear;
+  }
+  
+  .text-copy:nth-child(1){
+      stroke: #57a112;
+      animation-delay: -1;
+  }
+  
+  .text-copy:nth-child(2){
+      stroke: #a1e394;
+      animation-delay: -2s;
+  }
+  
+  .text-copy:nth-child(3){
+      stroke: white;
+      animation-delay: -3s;
+  }
+  
+  .text-copy:nth-child(4){
+      stroke: #4eed63;
+      animation-delay: -4s;
+  }
+  
+  .text-copy:nth-child(5){
+      stroke: #25f5e7;
+      animation-delay: -5s;
+  }
+  
+  @keyframes stroke-offset{
+      100% {stroke-dashoffset: -35%;}
+  }
+  
+  /* Seção Hero */
+  #hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: linear-gradient(135deg, #0f0f0f, #121212);
+      overflow: hidden;
+      color: #fff;
+  }
+  
+  /* Animação de fundo */
+  #hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #4eed63 25%, transparent 25%, transparent 50%, #4eed63 50%, #4eed63 75%, transparent 75%, transparent);
+      background-size: 200% 200%;
+      animation: moveBackground 5s linear infinite;
+      z-index: 1;
+      opacity: 0.2;
+  }
+  
+  @keyframes moveBackground {
+      0% {
+          background-position: 0% 0%;
+      }
+      50% {
+          background-position: 100% 100%;
+      }
+      100% {
+          background-position: 0% 0%;
+      }
+  }
+  
+
+/* Seção Hero */
 #hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
-    background-color: #121212;
-    color: #fff;
+    background: linear-gradient(135deg, #0f0f0f, #121212);
     overflow: hidden;
+    color: #fff;
 }
 
+/* Animação de fundo */
 #hero::before {
     content: '';
     position: absolute;
@@ -26,12 +125,12 @@ body {
     height: 100%;
     background: linear-gradient(45deg, #4eed63 25%, transparent 25%, transparent 50%, #4eed63 50%, #4eed63 75%, transparent 75%, transparent);
     background-size: 200% 200%;
-    animation: neonStripes 7s infinite;
-    opacity: 0.2;
+    animation: moveBackground 5s linear infinite;
     z-index: 1;
+    opacity: 0.2;
 }
 
-@keyframes neonStripes {
+@keyframes moveBackground {
     0% {
         background-position: 0% 0%;
     }
@@ -43,33 +142,84 @@ body {
     }
 }
 
+/* Conteúdo da Seção Hero */
 .hero-content {
     position: relative;
     z-index: 2;
-    width:100%;
+    display: flex;
+    width: 100%;
 }
 
-.hero-content h1 {
-    font-size: 64px;
-    color: white;
-    text-shadow: #4eed63;
-    text-align: right;
+/* Estilo para o Nome */
+#name {
+    font-size: 72px;
+    font-weight: 700;
+    color: #4eed63;
+    text-shadow: 0 0 20px rgba(78, 237, 99, 0.7), 0 0 30px rgba(78, 237, 99, 0.5);
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.5s ease, color 0.5s ease;
 }
 
-.hero-content p {
+#name:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+/* Estilo para o Sobre Mim */
+#typing-text {
     font-size: 24px;
-    max-width: 500px;
-    width: 40%;
+    color: #d1d1d1;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap; /* Permite quebras de linha */
+    overflow: hidden;
+    line-height: 1.6; /* Melhor espaçamento entre linhas */
+    max-width: 500px; /* Limita a largura do parágrafo */
+    word-wrap: break-word; /* Garante a quebra de palavras longas */
+    text-align: left; 
 }
 
-/* Restante do CSS permanece igual */
+.banner{
+    width: 50%;
+}
 
-.block{
-    display:flex;
+/* Layout Esquerda e Direita */
+.left-content {
+    flex: 1;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
-    
+    justify-content: flex-start;
+    padding-right:10px ;
 }
+
+.right-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #name {
+        font-size: 48px;
+    }
+
+    #typing-text {
+        font-size: 18px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-content, .right-content {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
 
 
 #navbar {

@@ -4,18 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Java Developer</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
     <section id="hero">
         <div class="hero-content">
-            <div class="block">
-                <p>Sou um desenvolvedor Java especializado em construir soluções eficientes e escaláveis...</p>
-                <div class="center">
-                    <h1>Joao Pedro</h1>
+            <div class="left-content">
+                <div>
+                    <p>Olá! meu nome é</p>
+                <div class="container">
+                    <svg viewBox="0 0 960 300">
+                      <symbol id="s-text">
+                        <text text-anchor="middle" x="50%" y="40%">João Pedro</text>
+                      </symbol>
+                  
+                      <g class = "g-ants">
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                        <use xlink:href="#s-text" class="text-copy"></use>
+                      </g>
+                    </svg>
+                  </div>
                 </div>
+            </div>
+            <div class="banner">
+                <p id="typing-text"></p>
             </div>
         </div>
     </section>
@@ -94,7 +111,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="scripts.js"></script>
+    <script src="JS/scripts.js"></script>
     <script>
         AOS.init();
     </script>

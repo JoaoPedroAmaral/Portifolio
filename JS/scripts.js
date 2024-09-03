@@ -19,3 +19,21 @@ function filterProjects(category) {
         }
     });
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const text = "Sou um desenvolvedor Java especializado em construir soluções eficientes e escaláveis...";
+    const typingText = document.getElementById('typing-text');
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length) {
+            typingText.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);  // Velocidade de digitação (em ms)
+        }
+    }
+
+    typeWriter();  // Inicia a animação de digitação
+});
+
