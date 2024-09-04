@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Handjet:wght@100..900&display=swap');
+
 
 
 body {
@@ -28,34 +31,34 @@ body {
   .text-copy {
       fill: none;
       stroke: white;
-      stroke-dasharray: 6% 29%;
+      stroke-dasharray: 6.5% 29%;
       stroke-width: 5px;
       stroke-dashoffset: 0%;
       animation: stroke-offset 5.5s infinite linear;
   }
   
   .text-copy:nth-child(1){
-      stroke: #57a112;
-      animation-delay: -1;
+      stroke: #51ff00;
+      animation-delay: -1s;
   }
   
   .text-copy:nth-child(2){
-      stroke: #a1e394;
+      stroke: #a0ff24;
       animation-delay: -2s;
   }
   
   .text-copy:nth-child(3){
-      stroke: white;
+      stroke: rgb(142, 255, 77);
       animation-delay: -3s;
   }
   
   .text-copy:nth-child(4){
-      stroke: #4eed63;
+      stroke: #80ff91;
       animation-delay: -4s;
   }
   
   .text-copy:nth-child(5){
-      stroke: #25f5e7;
+      stroke: #5de764;
       animation-delay: -5s;
   }
   
@@ -84,16 +87,18 @@ body {
 
 /* Estilo para o Sobre Mim */
 #typing-text {
-    font-size: 24px;
+    font-size: 30px;
     color: #d1d1d1;
-    font-family: 'Courier New', monospace;
+    /*font-family: 'Courier New', monospace;*/
+    /*font-family: "Courier Prime", monospace;*/
+    font-family: "Handjet", sans-serif;
     white-space: pre-wrap; /* Permite quebras de linha */
     overflow: hidden;
     line-height: 1.6; /* Melhor espaçamento entre linhas */
     max-width: 500px; /* Limita a largura do parágrafo */
     word-wrap: break-word; /* Garante a quebra de palavras longas */
     text-align: left; 
-    font-weight: bold;
+
 }
 
 .banner{
@@ -112,6 +117,11 @@ body {
     align-items: center;
     justify-content: flex-start;
     padding-right:10px ;
+}
+
+.left-content p{
+    font-family: "Handjet", sans-serif;
+    font-size:30px;
 }
 
 .right-content {
@@ -234,7 +244,7 @@ h2 {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    box-shadow: 0 0 15px 2px #4eed63;
+    box-shadow: 0 0 5px 5px #4eed63;
     opacity: 0.7;
     z-index: -1;
 }
@@ -242,6 +252,10 @@ h2 {
 .skill-bubble i {
     font-size: 32px;
     color: #4eed63;
+}
+
+.skill-bubble img{
+    width: 32px;
 }
 
 .skill-bubble:hover {
