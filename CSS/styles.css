@@ -1,11 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Press+Start+2P&display=swap');
 
+HTML{
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #121212;
+    background-color: #040504;
     color: #fff;
 }
 
@@ -69,7 +74,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 5%;
+      padding: 0% 5%;
       overflow: hidden;
       color: #fff;
   }
@@ -82,11 +87,58 @@ body {
     width: 100%;
 }
 
+/*LIne animate*/
+.animated-border{
+    padding-bottom: 10px;
+}
+
+.animated-border::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #4eed63;
+    animation: animateBorder 2s linear infinite;
+}
+
+.animated-border-top {
+    padding-top: 10px;
+}
+
+.animated-border-top::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #4eed63;
+    animation: animateBorder 2s linear infinite;
+}
+
+@keyframes animateBorder {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    50% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
+
+
 /* Estilo para o Sobre Mim */
 #typing-text {
-    font-size: 24px;
+    font-size: 16px;
     color: #d1d1d1;
-    font-family: 'Courier New', monospace;
+    text-shadow: 2px 2px #000;
+    font-family: "Press Start 2P", system-ui;
     white-space: pre-wrap; /* Permite quebras de linha */
     overflow: hidden;
     line-height: 1.6; /* Melhor espaçamento entre linhas */
@@ -101,9 +153,6 @@ body {
     justify-content: center;
 }
 
-.banner div{
-    width: 30vw;
-}
 
 /* Layout Esquerda e Direita */
 .left-content {
@@ -112,6 +161,12 @@ body {
     align-items: center;
     justify-content: flex-start;
     padding-right:10px ;
+}
+
+.left-content div p{
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 1rem;
+    text-shadow: 1px 1px #000;
 }
 
 .right-content {
@@ -129,7 +184,7 @@ body {
     }
 
     #typing-text {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .hero-content {
@@ -140,6 +195,10 @@ body {
     .left-content, .right-content {
         justify-content: center;
         margin-bottom: 20px;
+    }
+
+    svg {
+        width: 70vw;
     }
 }
 
@@ -158,15 +217,25 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 50px;
+    margin-right: 10px;
+}
+
 .logo h1 {
     color: #4eed63;
-    font-size: 24px;
+    font-size: 20px;
+    font-family: "Press Start 2P", system-ui;
 }
 
 .logo span {
@@ -177,6 +246,8 @@ body {
     list-style: none;
     display: flex;
     gap: 30px;
+    font-family: "Dela Gothic One", sans-serif;
+
 }
 
 .nav-links li a {
@@ -199,6 +270,7 @@ section {
 
 h2 {
     color: #4eed63;
+    font-family: "Dela Gothic One", sans-serif;
     margin-bottom: 40px;
     text-align: center;
     font-size: 36px;
@@ -216,14 +288,18 @@ h2 {
     background-color: #1f1f1f;
     padding: 15px;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     border: 2px solid transparent;
+}
+
+.icons{
+    width: 40px;
 }
 
 .skill-bubble::before {
@@ -234,19 +310,70 @@ h2 {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    box-shadow: 0 0 15px 2px #4eed63;
+    
     opacity: 0.7;
     z-index: -1;
 }
 
+
+.MYSQL::before{
+    box-shadow: 0 0 15px 2px #0290c4;
+}
+
+.MYSQL:hover{
+    box-shadow: 0 0 15px 3px #0290c4;
+}
+
+.SPRING::before{
+    box-shadow: 0 0 15px 2px #70af50;
+}
+
+.SPRING:hover{
+    box-shadow: 0 0 15px 3px #70af50;
+}
+
+.JS::before{
+    box-shadow: 0 0 15px 2px #ffca28;
+}
+
+.JS:hover{
+    box-shadow: 0 0 15px 3px #ffca28;
+}
+
+.CSS::before{
+    box-shadow: 0 0 15px 2px #2096f3;
+}
+
+.CSS:hover{
+    box-shadow: 0 0 15px 3px #2096f3;
+}
+
+.HTML::before{
+    box-shadow: 0 0 15px 2px #fc490b;
+}
+
+.HTML:hover{
+    box-shadow: 0 0 15px 3px #fc490b;
+}
+
+.Java::before{
+    box-shadow: 0 0 15px 2px #73A1FB;
+}
+
+.Java:hover{
+    box-shadow: 0 0 15px 3px #73A1FB;
+}
+
+
+
 .skill-bubble i {
     font-size: 32px;
-    color: #4eed63;
+    display: flex;
+    align-items: center;
 }
 
 .skill-bubble:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px 5px #4eed63;
 }
 
 .projects-grid {
@@ -260,6 +387,13 @@ h2 {
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+
+    
+}
+
+.project-card:hover{
+    transform: scale(1.07) !important;
+    background-color: #1db61d;
 }
 
 .project-card img {
@@ -275,11 +409,13 @@ h2 {
 .project-info h3 {
     color: #4eed63;
     margin-bottom: 10px;
-    font-size: 22px;
+    font-size: 15px;
+    font-family: "Press Start 2P", system-ui;
 }
 
 .project-info p {
     color: #bbb;
+    font-weight: bold;
 }
 
 .project-card:hover {
@@ -295,6 +431,7 @@ h2 {
 
 .filter button {
     background-color: #4eed63;
+    font-family: "Dela Gothic One", sans-serif;
     border: none;
     padding: 10px 20px;
     margin: 0 10px;
@@ -307,17 +444,6 @@ h2 {
 
 .filter button:hover {
     background-color: #3ec252;
-}
-
-#contact {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #1f1f1f;
-    border-top: 3px solid #4eed63;
-}
-
-.contact-info {
-    margin-bottom: 40px;
 }
 
 .contact-info a {
@@ -338,5 +464,10 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #1f1f1f;
-    border-top: 3px solid #4eed63;
+
+}
+
+footer h3{
+    font-size: 30px;
+    margin:10px;
 }

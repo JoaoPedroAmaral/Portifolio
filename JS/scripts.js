@@ -22,7 +22,7 @@ function filterProjects(category) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const text = "Sou um desenvolvedor Java especializado em construir soluções eficientes e escaláveis...";
+    const text = "Desenvolvedor Java com experiência em Spring Framework e MySQL para soluções back-end. Também atuo no front-end com HTML, CSS e JavaScript, criando interfaces dinâmicas e integradas.";
     const typingText = document.getElementById('typing-text');
     let i = 0;
 
