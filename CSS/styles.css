@@ -385,10 +385,15 @@ h2 {
 .project-card {
     background-color: #1f1f1f;
     border-radius: 8px;
+    height: 350px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 
     
+}
+.projects-grid a{
+    text-decoration: none;
+    outline: none;
 }
 
 .project-card:hover{
