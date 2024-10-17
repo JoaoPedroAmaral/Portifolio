@@ -15,7 +15,7 @@
     border-radius: 10px;
     background-color: #4eed63;
     color: black;
-    margin: 0 1%;
+    margin:1%;
     font-family: "Dela Gothic One", sans-serif;
 }
 
@@ -25,29 +25,10 @@
     font-family: "Dela Gothic One", sans-serif;
 }
 
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-}
-
-.col-lg-4{
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-}
-
-.col-sm-6{
-    width: 100%;
-    margin: 15px;
-}
-
-.col-sm-6:hover{
-    box-shadow: none;
-}
-
 .box{
     position: relative;
     height: 500px;
+    margin: 10px;
     color: #fff;
     border-radius: 10px;
     overflow: hidden;
@@ -67,7 +48,7 @@
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
-    height: 200px;
+    height: 250px;
     border-radius: 0 25px 0 25px;
     margin: 0;
     padding: 20px;
@@ -78,7 +59,7 @@
     width:100%;
     border: solid 2px #4eed63;
     border-radius: 0 25px 0 25px;
-    height: 250px;
+    height: 220px;
 }
 
 .detail-box{
