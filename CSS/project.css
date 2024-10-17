@@ -1,0 +1,86 @@
+.filters_menu{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 45px 0 20px 0;
+}
+
+
+.filters_menu li{
+    padding: 7px 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #4eed63;
+    color: black;
+    margin: 0 2%;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.filters_menu li.active{
+    background-color: #316e39;
+    color: #fff;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-lg-4{
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+}
+
+.col-sm-6{
+    width: 100%;
+    margin: 15px;
+}
+
+.col-sm-6:hover{
+    box-shadow: none;
+}
+
+.box{
+    position: relative;
+    height: 500px;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #1f1f1f;
+    transition:transform 0.3s, box-shadow 0.3s;
+    
+}
+
+.box:hover{
+    transform: scale(1.07);
+    box-shadow: 0 0 15px 2px #4eed63;
+}
+
+.img-box{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 200px;
+    border-radius: 0 25px 0 25px;
+    margin: 0;
+    padding: 20px;
+}
+
+.img-box img{
+    margin-top: 30px;
+    width:100%;
+    border: solid 2px #4eed63;
+    border-radius: 0 25px 0 25px;
+    height: 250px;
+}
+
+.detail-box{
+    padding: 20px;
+}

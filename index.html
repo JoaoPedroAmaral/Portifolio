@@ -6,9 +6,12 @@
     <title>João Pedro Amaral Rosa</title>
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet" href="CSS/background.css">
+    <link rel="stylesheet" href="CSS/project.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="shortcut icon" type="imagex/png" href="IMG/IconJS.png">
+
+
 </head>
 <body>
     <div id="hero" class="slider-thumb animated-border">
@@ -78,7 +81,7 @@
         </div>
     </section>
 
-    <section id="projects" data-aos="fade-up">
+    <!-- <section id="projects" data-aos="fade-up">
         <h2>Projetos</h2>
         <div class="filter">
             <button onclick="filterProjects('all')">Todos</button>
@@ -87,7 +90,7 @@
         </div>
         <div class="projects-grid">
             <a href="https://github.com/JoaoPedroAmaral/Back-End_Java_Rockeseat"><div class="project-card java" data-aos="zoom-in">
-                <img src="IMG/BESpring.png" alt="Projeto Java 1">
+                <img src="IMG/BESpring.png" alt="Projeto Java">
                 <div class="project-info">
                     <h3>Back-end Spring Boot</h3>
                     <p>Back-end de gerenciamento de Usuarios e Tasks utilizando a linguagem Java junto com Spring boot, Jakarta e Bycript</p>
@@ -95,23 +98,31 @@
             </div></a>
 
             <a href="https://github.com/JoaoPedroAmaral/Calculadora_JFrame"><div class="project-card java" data-aos="zoom-in">
-                <img src="IMG/Calculadora.png" alt="Projeto Java 1">
+                <img src="IMG/Calculadora.png" alt="Projeto Java">
                 <div class="project-info">
                     <h3>Calculadora</h3>
                     <p>Calculadora utilizando JavaFX</p>
                 </div>
             </div></a>
 
-            <a href="https://github.com/JoaoPedroAmaral/ChatJP"><div class="project-card java" data-aos="zoom-in">
-                <img src="IMG/ChatJP.png" alt="Projeto Java 1">
+            <a href="https://github.com/JoaoPedroAmaral/ChatJP"><div class="project-card js" data-aos="zoom-in">
+                <img src="IMG/ChatJP.png" alt="Projeto Js">
                 <div class="project-info">
                     <h3>Chat JP</h3>
                     <p>Utilizando a poderosa ferramenta da OpenAI, foi criado uma interface simulando o famoso CHATGPT</p>
                 </div>
             </div></a>
 
-           <a href="https://joaopedroamaral.github.io/Jodan/"><div class="project-card java" data-aos="zoom-in">
-                <img src="IMG/Jodan.png" alt="Projeto Java 1">
+           <a href="https://joaopedroamaral.github.io/Jodan/"><div class="project-card js" data-aos="zoom-in">
+                <img src="IMG/Jodan.png" alt="Projeto Js">
+                <div class="project-info">
+                    <h3>Jodan</h3>
+                    <p>Site feito para venda de produtos musicais online.</p>
+                </div>
+            </div></a>
+
+            <a href="https://joaopedroamaral.github.io/Jodan/"><div class="project-card js" data-aos="zoom-in">
+                <img src="IMG/Jodan.png" alt="Projeto Js">
                 <div class="project-info">
                     <h3>Jodan</h3>
                     <p>Site feito para venda de produtos musicais online.</p>
@@ -119,15 +130,72 @@
             </div></a>
 
             <a href="https://github.com/JoaoPedroAmaral/Back-End_Java_Rockeseat"><div class="project-card java" data-aos="zoom-in">
-                <img src="IMG/PrintGerenciadorLista.png" alt="Projeto Java 1">
+                <img src="IMG/PrintGerenciadorLista.png" alt="Projeto Java">
                 <div class="project-info">
                     <h3>Gerenciador de Listas</h3>
                     <p>Criado com JavaFX, o gerenciador de lista tem o objetivos de ser um programa onde voce lista suas metas e marca elas conforme for realizando.</p>
                 </div>
             </div></a>
-            <!-- Adicionar mais projetos aqui -->
+            <!-- Adicionar mais projetos aqui 
+        </div>
+    </section> -->
+
+    <section>
+        <ul class="filters_menu">
+            <li class="active" data-filter="*">Todos</li>
+            <li data-filter=".java">Java</li>
+            <li data-filter=".js">JavaScript</li>
+        </ul>
+
+        <div class="filters-content">
+            <div class="row grid" style="position: relative; height: 1680px;">
+                <!--card-->
+                <a href="https://joaopedroamaral.github.io/Jodan/"><div class="col-sm-6 col-lg-4 all java" style="position: absolute; left: 0px; top: 0px;"">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="IMG/Jodan.png" alt="Projeto Js">
+                            </div>
+                            <div class="detail-box">
+                                <h3>Jodan</h3>
+                                <p>Site feito para venda de produtos musicais online.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div></a>
+
+                <a href="https://joaopedroamaral.github.io/Jodan/"><div class="col-sm-6 col-lg-4 all js" style="position: absolute; left: 35%; top: 0px;"">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="IMG/Jodan.png" alt="Projeto Js">
+                            </div>
+                            <div class="detail-box">
+                                <h3>Jodan</h3>
+                                <p>Site feito para venda de produtos musicais online.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div></a>
+
+                <a href="https://joaopedroamaral.github.io/Jodan/"><div class="col-sm-6 col-lg-4 all java" style="position: absolute; left: 70%; top: 0px;"">
+                    <div class="box">
+                        <div>
+                            <div class="img-box">
+                                <img src="IMG/Jodan.png" alt="Projeto Js">
+                            </div>
+                            <div class="detail-box">
+                                <h3>Jodan</h3>
+                                <p>Site feito para venda de produtos musicais online.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div></a>
+
+            </div>
         </div>
     </section>
+
 
     <div class="animated-border-top"></div>
     <footer id="contact">
@@ -147,8 +215,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="JS/scripts.js"></script>
-    <script>
         AOS.init();
     </script>
+    <script src="JS/isotope.js"></script>
 </body>
 </html>
