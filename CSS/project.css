@@ -15,14 +15,14 @@
     border-radius: 10px;
     background-color: #4eed63;
     color: black;
-    margin: 0 2%;
-    font-family: "Press Start 2P", system-ui;
+    margin: 0 1%;
+    font-family: "Dela Gothic One", sans-serif;
 }
 
 .filters_menu li.active{
     background-color: #316e39;
     color: #fff;
-    font-family: "Press Start 2P", system-ui;
+    font-family: "Dela Gothic One", sans-serif;
 }
 
 .row{
@@ -57,8 +57,8 @@
 }
 
 .box:hover{
-    transform: scale(1.07);
-    box-shadow: 0 0 15px 2px #4eed63;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px 2px #4eed63;
 }
 
 .img-box{

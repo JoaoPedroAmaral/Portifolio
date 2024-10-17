@@ -10,7 +10,41 @@ window.onscroll = function() {
 
 
 
-$grid.isotope({ filter: '.js' })
+
+document.addEventListener('DOMContentLoaded', function () {
+    const filtersMenuItems = document.querySelectorAll('.filters_menu li');
+    const grid = document.querySelector('.grid');
+    const gridItems = document.querySelectorAll('.all');
+
+    // Função para filtrar os itens no grid
+    function filterItems(filter) {
+        gridItems.forEach(item => {
+            if (filter === '*' || item.classList.contains(filter.substring(1))) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    // Adiciona o evento de clique para cada item no menu de filtros
+    filtersMenuItems.forEach(item => {
+        item.addEventListener('click', function () {
+            // Remove a classe 'active' de todos os itens
+            filtersMenuItems.forEach(menuItem => menuItem.classList.remove('active'));
+            // Adiciona a classe 'active' ao item clicado
+            this.classList.add('active');
+
+            // Obtém o filtro selecionado
+            const filter = this.getAttribute('data-filter');
+            filterItems(filter);
+        });
+    });
+
+    // Inicializa o grid
+    filterItems('*'); // Mostra todos os itens inicialmente
+});
+
 
 
 
