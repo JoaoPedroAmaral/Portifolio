@@ -34,34 +34,34 @@ body {
   .text-copy {
       fill: none;
       stroke: white;
-      stroke-dasharray: 6% 29%;
+      stroke-dasharray: 6.5% 29%;
       stroke-width: 5px;
       stroke-dashoffset: 0%;
       animation: stroke-offset 5.5s infinite linear;
   }
   
   .text-copy:nth-child(1){
-      stroke: #57a112;
-      animation-delay: -1;
+      stroke: #51ff00;
+      animation-delay: -1s;
   }
   
   .text-copy:nth-child(2){
-      stroke: #a1e394;
+      stroke: #a0ff24;
       animation-delay: -2s;
   }
   
   .text-copy:nth-child(3){
-      stroke: white;
+      stroke: rgb(142, 255, 77);
       animation-delay: -3s;
   }
   
   .text-copy:nth-child(4){
-      stroke: #4eed63;
+      stroke: #80ff91;
       animation-delay: -4s;
   }
   
   .text-copy:nth-child(5){
-      stroke: #25f5e7;
+      stroke: #5de764;
       animation-delay: -5s;
   }
   
@@ -146,7 +146,7 @@ body {
     max-width: 500px; /* Limita a largura do parágrafo */
     word-wrap: break-word; /* Garante a quebra de palavras longas */
     text-align: left; 
-    font-weight: bold;
+
 }
 
 .banner{
@@ -163,6 +163,7 @@ body {
     justify-content: flex-start;
     padding-right:10px ;
 }
+
 
 .left-content div p{
     font-family: "Dela Gothic One", sans-serif;
@@ -311,7 +312,6 @@ h2 {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    
     opacity: 0.7;
     z-index: -1;
 }
@@ -371,6 +371,10 @@ h2 {
     font-size: 32px;
     display: flex;
     align-items: center;
+}
+
+.skill-bubble img{
+    width: 32px;
 }
 
 .skill-bubble:hover {

@@ -30,8 +30,6 @@
     transform: translate3d(0,-3px,0) rotateZ(0.01deg);
   }
 }
-
-
 @media (max-width: 768px) {
   .slider-thumb::before {
     width: 90%;
