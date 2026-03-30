@@ -58,20 +58,7 @@ export default function About() {
               custom={2}
               className="text-[#71717a] leading-relaxed mb-4"
             >
-              Sou João Pedro Amaral Rosa, desenvolvedor com foco em back-end Java e Spring Boot,
-              criando APIs robustas e sistemas escaláveis. No front-end, desenvolvo interfaces
-              modernas e integradas com HTML, CSS e JavaScript.
-            </motion.p>
-
-            <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              animate={inView ? 'visible' : 'hidden'}
-              custom={3}
-              className="text-[#71717a] leading-relaxed"
-            >
-              Tenho experiência com MVC, REST APIs, gerenciamento de banco de dados MySQL,
-              e um olho treinado para entregar código limpo e manutenível.
+              Construo sistemas do zero ao deploy — APIs robustas e escaláveis com Java e Spring Boot no back-end, e interfaces modernas e integradas com HTML, CSS e JavaScript no front. Código limpo, arquitetura sólida e entrega que funciona de verdade.
             </motion.p>
           </motion.div>
 
