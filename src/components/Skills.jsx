@@ -4,19 +4,27 @@ import { motion, useInView } from 'framer-motion'
 const SKILL_GROUPS = [
   {
     label: 'Back-end',
-    skills: ['Java', 'Spring Boot', 'Jakarta EE', 'REST APIs', 'BCrypt', 'JPA / Hibernate'],
+    skills: ['Java', 'Spring Boot', 'Jakarta EE', 'REST APIs', 'BCrypt', 'JPA / Hibernate', 'JWT', 'Liferay'],
   },
   {
     label: 'Banco de dados',
-    skills: ['MySQL', 'Sequelize', 'SQL', 'MVC'],
+    skills: ['MySQL', 'SQL', 'PostgreSQL'],
   },
   {
     label: 'Front-end',
-    skills: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Vite', 'Tailwind CSS'],
+    skills: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Vite', 'Tailwind CSS', 'Bootstrap', 'Vue.js', 'React Native'],
   },
   {
     label: 'Ferramentas',
     skills: ['Git', 'GitHub', 'Node.js', 'Express', 'Maven', 'IntelliJ IDEA'],
+  },
+  {
+    label: 'Princípios',
+    skills: ['Clean Code', 'Clean Architecture', 'DRY', 'KISS', 'SOLID'],
+  },
+  {
+    label: 'DevOps',
+    skills: ['CI/CD', 'Versionamento de código', 'Deploy de sistemas'],
   },
 ]
 
@@ -62,7 +70,7 @@ export default function Skills() {
           Stack & ferramentas
         </motion.h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {SKILL_GROUPS.map((group, gi) => (
             <motion.div
               key={group.label}

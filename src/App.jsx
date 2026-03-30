@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Experience from './components/Experience'
 import Skills from './components/Skills'
 import FeaturedProjects from './components/FeaturedProjects'
 import GitHubProjects from './components/GitHubProjects'
@@ -14,6 +15,7 @@ export default function App() {
       <main className="w-full">
         <Hero />
         <About />
+        <Experience />
         <Skills />
         <FeaturedProjects />
         <GitHubProjects />

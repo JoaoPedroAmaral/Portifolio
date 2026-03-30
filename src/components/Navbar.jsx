@@ -4,9 +4,9 @@ import { Menu, X } from 'lucide-react'
 
 const NAV_LINKS = [
   { href: '#sobre', label: 'Sobre' },
+  { href: '#experiencia', label: 'Experiência' },
   { href: '#skills', label: 'Skills' },
   { href: '#projetos', label: 'Projetos' },
-  { href: '#github', label: 'GitHub' },
   { href: '#contato', label: 'Contato' },
 ]
 

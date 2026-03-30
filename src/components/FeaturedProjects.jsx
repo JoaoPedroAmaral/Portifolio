@@ -53,8 +53,6 @@ function matchesFilter(project, filter) {
   return true
 }
 
-import { useState } from 'react'
-
 export default function FeaturedProjects() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
