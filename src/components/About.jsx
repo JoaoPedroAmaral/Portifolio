@@ -12,7 +12,7 @@ const fadeUp = {
 
 const CODE_LINES = [
   { key: 'name', op: ':', value: '"João Pedro"', color: 'text-[#e8c97b]' },
-  { key: 'role', op: ':', value: '"Java Developer"', color: 'text-[#e8c97b]' },
+  { key: 'role', op: ':', value: '"FullStack Developer"', color: 'text-[#e8c97b]' },
   { key: 'stack', op: ':', value: '["Java", "Spring", "MySQL", "JS"]', color: 'text-[#71c4ef]' },
   { key: 'status', op: ':', value: '"open to work"', color: 'text-[#39ff14]' },
   { key: 'location', op: ':', value: '"Brasil"', color: 'text-[#e8c97b]' },

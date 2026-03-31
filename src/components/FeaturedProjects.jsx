@@ -9,7 +9,7 @@ const PROJECTS = [
     description:
       'O Colorashin é um sistema cujo objetivo é transformar qualquer imagem em uma página para colorir. Nosso maior propósito é incentivar a liberdade criativa, permitindo que você crie de forma rápida e acessível seus próprios livros de colorir, quadros, pinturas e muito mais.',
     tags: ['React', 'Javascript', 'Java', 'Spring Boot', 'HTML', 'Tailwind', 'Eslint', 'Git', 'Mercado Pago'],
-    liveUrl: 'colorashin.onrender.com',
+    liveUrl: 'https://colorashin.onrender.com',
     githubUrl: 'https://github.com/JoaoPedroAmaral/Colorashin',
     img: '/IMG/Colorashin.png',
   },
@@ -19,7 +19,7 @@ const PROJECTS = [
     description:
       ' Mentech é um sistema web desenvolvido para auxiliar profissionais da Terapia Cognitivo-Comportamental (TCC) no gerenciamento completo de pacientes e atendimentos. A plataforma permite o controle detalhado de pacientes, acompanhamento do progresso terapêutico e registro de informações clínicas, incluindo anamnese e prontuários.',
     tags: ['Flask', 'Python', 'Javascript', 'JWT', 'MYSQL', 'React'],
-    liveUrl: 'Mentech.app.br',
+    liveUrl: 'https://mentech.app.br',
     githubUrl: 'https://github.com/JoaoPedroAmaral/MentechFrontEnd',
     img: '/IMG/Mentech.png',
   },
