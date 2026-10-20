@@ -1,27 +1,33 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Experience from './components/Experience'
-import Skills from './components/Skills'
-import FeaturedProjects from './components/FeaturedProjects'
-import GitHubProjects from './components/GitHubProjects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { MAIN_CONTENT_ID } from './constants/site'
+import GitHubProvider from './context/GitHubProvider'
+import SkipLink from './components/layout/SkipLink'
+import ScrollProgress from './components/layout/ScrollProgress'
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
+import QuickContact from './components/layout/QuickContact'
+import Hero from './components/sections/Hero'
+import About from './components/sections/About'
+import Experience from './components/sections/Experience'
+import Skills from './components/sections/Skills'
+import Projects from './components/sections/Projects'
+import GitHubRepos from './components/sections/GitHubRepos'
 
 export default function App() {
   return (
-    <div className="w-full min-h-screen bg-[#0a0a0a] text-[#f5f5f5]">
+    <GitHubProvider>
+      <SkipLink />
+      <ScrollProgress />
       <Navbar />
-      <main className="w-full">
+      <main id={MAIN_CONTENT_ID} className="flex-1">
         <Hero />
         <About />
         <Experience />
         <Skills />
-        <FeaturedProjects />
-        <GitHubProjects />
-        <Contact />
+        <Projects />
+        <GitHubRepos />
       </main>
       <Footer />
-    </div>
+      <QuickContact />
+    </GitHubProvider>
   )
 }
