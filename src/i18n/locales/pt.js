@@ -13,7 +13,9 @@ export const pt = {
     about: 'Sobre',
     experience: 'Experiência',
     skills: 'Stack',
+    certifications: 'Certificações',
     projects: 'Projetos',
+    github: 'Repositórios',
   },
   theme: {
     toLight: 'Mudar para tema claro',
@@ -115,6 +117,7 @@ export const pt = {
   certifications: {
     label: 'Credenciais',
     title: 'Certificações',
+    description: 'Credenciais emitidas por ServiceNow, Alura, Rocketseat e VMEdu.',
     issuedIn: 'Emitida em',
   },
   projects: {
