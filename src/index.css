@@ -149,7 +149,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
   transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
     color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
