@@ -22,6 +22,7 @@ export const SECTION_IDS = {
   about: 'sobre',
   experience: 'experiencia',
   skills: 'skills',
+  certifications: 'certificacoes',
   projects: 'projetos',
   github: 'github',
 }
@@ -32,7 +33,9 @@ export const NAV_LINKS = [
   { id: SECTION_IDS.about, key: 'about' },
   { id: SECTION_IDS.experience, key: 'experience' },
   { id: SECTION_IDS.skills, key: 'skills' },
+  { id: SECTION_IDS.certifications, key: 'certifications' },
   { id: SECTION_IDS.projects, key: 'projects' },
+  { id: SECTION_IDS.github, key: 'github' },
 ]
 
 export const HERO_STATS = ['repos', 'followers', 'stars']
