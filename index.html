@@ -3,16 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>João Pedro Amaral — Desenvolvedor Java & Full-Stack</title>
-    <meta name="description" content="Portfólio de João Pedro Amaral Rosa — Desenvolvedor Java com Spring Boot, MySQL e front-end moderno." />
+
+    <title>João Pedro Amaral — Desenvolvedor Full-Stack</title>
+    <meta
+      name="description"
+      content="Desenvolvedor full-stack em Java, Spring Boot e React. Construo sistemas do banco de dados ao navegador, com atenção a arquitetura, privacidade e desempenho."
+    />
     <meta name="author" content="João Pedro Amaral Rosa" />
-    <meta property="og:title" content="João Pedro Amaral — Desenvolvedor Java & Full-Stack" />
+
     <meta property="og:type" content="website" />
-    <link rel="icon" type="image/png" href="/IMG/IconJS.png" />
+    <meta property="og:title" content="João Pedro Amaral — Desenvolvedor Full-Stack" />
+    <meta
+      property="og:description"
+      content="Desenvolvedor full-stack em Java, Spring Boot e React. Construo sistemas do banco de dados ao navegador."
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#15120e" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      (function () {
+        var STORAGE_KEY = 'portfolio-theme'
+        var DARK = 'dark'
+        var LIGHT = 'light'
+        var stored = null
+        try {
+          stored = localStorage.getItem(STORAGE_KEY)
+        } catch (error) {
+          stored = null
+        }
+        if (stored !== DARK && stored !== LIGHT) {
+          var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches
+          stored = prefersLight ? LIGHT : DARK
+        }
+        document.documentElement.setAttribute('data-theme', stored)
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

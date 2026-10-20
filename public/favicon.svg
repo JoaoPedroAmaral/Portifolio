@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="JP">
+  <style>
+    .plate { fill: #15120e; }
+    .mark { stroke: #f0b429; }
+    @media (prefers-color-scheme: light) {
+      .plate { fill: #faf7f2; }
+      .mark { stroke: #915b00; }
+    }
+  </style>
+  <rect class="plate" width="64" height="64" rx="15" />
+  <g class="mark" fill="none" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M27 17 V39 C27 45.5 22 48.5 17.5 45.5" />
+    <path d="M27 17 H38.5 C46 17 46 30 38.5 30 H27" />
+  </g>
+</svg>
