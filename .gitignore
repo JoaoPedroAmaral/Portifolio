@@ -28,3 +28,7 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.stackdump
+
+# Documentação interna de planejamento
+docs/
