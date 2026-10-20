@@ -4,7 +4,6 @@ import { useTranslation } from '../../i18n/languageContext'
 import Reveal from '../ui/Reveal'
 import SectionHeading from '../ui/SectionHeading'
 import Tag from '../ui/Tag'
-import CertificationList from '../ui/CertificationList'
 
 const SKILLS_HEADING_ID = 'skillsHeading'
 
@@ -46,8 +45,6 @@ export default function Skills() {
             </Reveal>
           ))}
         </div>
-
-        <CertificationList />
       </div>
     </section>
   )

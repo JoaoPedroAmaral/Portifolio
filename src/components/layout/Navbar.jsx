@@ -46,7 +46,7 @@ export default function Navbar() {
           <Monogram size="small" />
         </a>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center lg:flex">
           {NAV_LINKS.map((link) => {
             const isActive = activeId === link.id
             const linkTone = isActive ? 'text-ink' : 'text-ink-muted hover:text-ink'
@@ -56,11 +56,11 @@ export default function Navbar() {
                 <a
                   href={`#${link.id}`}
                   aria-current={isActive ? 'true' : undefined}
-                  className={`group relative inline-flex min-h-[44px] items-center px-4 text-sm transition-colors duration-300 ${linkTone}`}
+                  className={`group relative inline-flex min-h-[44px] items-center px-3 text-sm transition-colors duration-300 ${linkTone}`}
                 >
                   {t.nav[link.key]}
                   <span
-                    className={`absolute inset-x-4 bottom-4 h-px origin-left bg-accent transition-transform duration-300 ${
+                    className={`absolute inset-x-3 bottom-4 h-px origin-left bg-accent transition-transform duration-300 ${
                       isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                     }`}
                     aria-hidden="true"
@@ -80,7 +80,7 @@ export default function Navbar() {
             aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
             aria-expanded={menuOpen}
             aria-controls={MOBILE_MENU_ID}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink-muted transition-colors duration-300 hover:border-accent hover:text-accent md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-ink-muted transition-colors duration-300 hover:border-accent hover:text-accent lg:hidden"
           >
             {menuOpen ? <X size={ICON_SIZE} /> : <Menu size={ICON_SIZE} />}
           </button>
@@ -95,7 +95,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: DURATION.fast, ease: EASE_OUT_SOFT }}
-            className="overflow-hidden border-t border-line bg-surface md:hidden"
+            className="overflow-hidden border-t border-line bg-surface lg:hidden"
           >
             <ul className="mx-auto flex w-full max-w-6xl flex-col px-5 py-2 sm:px-8">
               {NAV_LINKS.map((link) => (
