@@ -1,10 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { screen, within } from '@testing-library/react'
 import Experience from '../components/sections/Experience'
-import Skills from '../components/sections/Skills'
+import Certifications from '../components/sections/Certifications'
 import { EXPERIENCES } from '../constants/experience'
 import { CERTIFICATIONS } from '../constants/certifications'
 import { SKILL_GROUPS } from '../constants/skills'
+import { NAV_LINKS } from '../constants/site'
 import { pt } from '../i18n/locales/pt'
 import { en } from '../i18n/locales/en'
 import { es } from '../i18n/locales/es'
@@ -71,12 +72,19 @@ describe('Credenciais e stack', () => {
   })
 
   it('11.9 renderiza toda certificação com emissor e data', () => {
-    renderWithLanguage(<Skills />)
-    const list = screen.getByRole('list', { name: pt.certifications.title })
+    renderWithLanguage(<Certifications />)
+    const section = screen.getByRole('region', { name: pt.certifications.title })
 
     CERTIFICATIONS.forEach((certification) => {
-      expect(within(list).getByText(certification.name)).toBeInTheDocument()
+      expect(within(section).getByText(certification.name)).toBeInTheDocument()
+      expect(within(section).getAllByText(new RegExp(certification.issuer)).length).toBeGreaterThan(0)
     })
+  })
+
+  it('11.12 expõe certificações e repositórios como destinos de navegação', () => {
+    const keys = NAV_LINKS.map((link) => link.key)
+    expect(keys).toContain('certifications')
+    expect(keys).toContain('github')
   })
 
   it('11.10 traduz o rótulo de todo grupo de stack nos três idiomas', () => {
