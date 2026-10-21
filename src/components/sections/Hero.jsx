@@ -35,9 +35,11 @@ function entrance(step) {
 
 export default function Hero() {
   const { t } = useTranslation()
-  const { stats, loading } = useGitHub()
+  const { stats, loading, error } = useGitHub()
   const { containerRef, handlePointerMove, handlePointerLeave, glowBackground, parallax } =
     usePointerGlow()
+
+  const statsUnavailable = loading || error !== null
 
   return (
     <section
@@ -119,7 +121,7 @@ export default function Hero() {
                 {t.hero.stats[key]}
               </dt>
               <dd className="order-1 m-0 font-display text-2xl font-semibold text-ink">
-                {loading ? EMPTY_STAT : stats[key]}
+                {statsUnavailable ? EMPTY_STAT : stats[key]}
               </dd>
             </div>
           ))}
