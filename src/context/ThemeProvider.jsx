@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
+  BROWSER_BAR_COLORS,
   DARK,
   LIGHT,
   LIGHT_QUERY,
@@ -7,6 +8,9 @@ import {
   THEME_STORAGE_KEY,
   ThemeContext,
 } from './themeContext'
+
+const BROWSER_BAR_SELECTOR = 'meta[name="theme-color"]'
+const BACKGROUND_TOKEN = '--bg'
 
 function readStoredTheme() {
   try {
@@ -39,7 +43,14 @@ export default function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(resolveInitialTheme)
 
   useEffect(() => {
-    document.documentElement.setAttribute(THEME_ATTRIBUTE, theme)
+    const root = document.documentElement
+    root.setAttribute(THEME_ATTRIBUTE, theme)
+
+    const bar = document.querySelector(BROWSER_BAR_SELECTOR)
+    if (!bar) return
+
+    const token = getComputedStyle(root).getPropertyValue(BACKGROUND_TOKEN).trim()
+    bar.setAttribute('content', token || BROWSER_BAR_COLORS[theme])
   }, [theme])
 
   const toggleTheme = useCallback(() => {

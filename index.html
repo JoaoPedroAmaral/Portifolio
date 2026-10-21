@@ -21,8 +21,7 @@
     <meta name="twitter:card" content="summary" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="theme-color" content="#15120e" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#faf7f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15120e" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,6 +46,10 @@
           stored = prefersLight ? LIGHT : DARK
         }
         document.documentElement.setAttribute('data-theme', stored)
+
+        var BAR_COLORS = { dark: '#15120e', light: '#faf7f2' }
+        var bar = document.querySelector('meta[name="theme-color"]')
+        if (bar) bar.setAttribute('content', BAR_COLORS[stored])
       })()
     </script>
   </head>
