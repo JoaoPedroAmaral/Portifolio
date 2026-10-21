@@ -121,17 +121,30 @@ export default function Navbar() {
             className="overflow-hidden border-t border-line bg-surface lg:hidden"
           >
             <ul className="mx-auto flex w-full max-w-6xl flex-col px-5 py-2 sm:px-8">
-              {NAV_LINKS.map((link) => (
-                <li key={link.id}>
-                  <a
-                    href={`#${link.id}`}
-                    onClick={(event) => handleMobileNavigate(event, link.id)}
-                    className="flex min-h-[48px] items-center border-b border-line text-sm text-ink-muted transition-colors duration-300 last:border-0 hover:text-accent"
-                  >
-                    {t.nav[link.key]}
-                  </a>
-                </li>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const isActive = activeId === link.id
+
+                return (
+                  <li key={link.id}>
+                    <a
+                      href={`#${link.id}`}
+                      onClick={(event) => handleMobileNavigate(event, link.id)}
+                      aria-current={isActive ? 'true' : undefined}
+                      className={`flex min-h-[48px] items-center gap-3 border-b border-line text-sm transition-colors duration-300 last:border-0 ${
+                        isActive ? 'text-accent' : 'text-ink-muted hover:text-accent'
+                      }`}
+                    >
+                      <span
+                        aria-hidden="true"
+                        className={`h-px bg-accent transition-all duration-300 ${
+                          isActive ? 'w-6' : 'w-0'
+                        }`}
+                      />
+                      {t.nav[link.key]}
+                    </a>
+                  </li>
+                )
+              })}
             </ul>
           </motion.div>
         ) : null}
