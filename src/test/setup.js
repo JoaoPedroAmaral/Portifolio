@@ -29,16 +29,27 @@ export function mockMatchMedia({ prefersLight = false, prefersReducedMotion = fa
   }))
 }
 
+export const observadores = []
+
 class IntersectionObserverStub {
   constructor(callback) {
     this.callback = callback
+    this.observados = []
+    observadores.push({ callback, observados: this.observados, instancia: this })
   }
 
-  observe() {}
+  observe(element) {
+    this.observados.push(element)
+  }
 
-  unobserve() {}
+  unobserve(element) {
+    const posicao = this.observados.indexOf(element)
+    if (posicao >= 0) this.observados.splice(posicao, 1)
+  }
 
-  disconnect() {}
+  disconnect() {
+    this.observados.length = 0
+  }
 
   takeRecords() {
     return []
@@ -46,6 +57,7 @@ class IntersectionObserverStub {
 }
 
 beforeEach(() => {
+  observadores.length = 0
   mockMatchMedia()
   window.IntersectionObserver = IntersectionObserverStub
   window.scrollTo = vi.fn()

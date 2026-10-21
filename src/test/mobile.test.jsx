@@ -8,6 +8,7 @@ import { readFileSync } from 'node:fs'
 import { BROWSER_BAR_COLORS, DARK, LIGHT } from '../context/themeContext'
 import { pt } from '../i18n/locales/pt'
 import { makeRepo, mockGitHub, renderWithProviders } from './helpers'
+import { observadores } from './setup'
 
 const THEME_COLOR_SELECTOR = 'meta[name="theme-color"]'
 const EMPTY_STAT = '—'
@@ -18,6 +19,19 @@ function installThemeColorMeta() {
   meta.setAttribute('content', '#000000')
   document.head.appendChild(meta)
   return meta
+}
+
+function entrarNaSecao(id) {
+  const alvo = document.getElementById(id)
+  observadores.forEach((entrada) => {
+    entrada.callback(
+      entrada.observados.map((elemento) => ({
+        target: elemento,
+        isIntersecting: elemento === alvo,
+      })),
+      entrada.instancia
+    )
+  })
 }
 
 async function openMobileMenu(user) {
@@ -71,6 +85,33 @@ describe('Navegação pelo menu estreito', () => {
     await user.click(within(menu).getByRole('link', { name: pt.nav.skills }))
 
     await waitFor(() => expect(window.location.hash).toBe('#skills'))
+  })
+
+  it('12.9 marca no menu a seção que está sendo vista', async () => {
+    const user = userEvent.setup()
+    mockGitHub({ repos: [] })
+    renderWithProviders(<App />)
+
+    const menuInicial = await openMobileMenu(user)
+    within(menuInicial)
+      .getAllByRole('link')
+      .forEach((destino) => expect(destino).not.toHaveAttribute('aria-current'))
+
+    await user.click(screen.getByRole('button', { name: pt.nav.closeMenu }))
+    entrarNaSecao('projetos')
+
+    const menu = await openMobileMenu(user)
+    await waitFor(() =>
+      expect(within(menu).getByRole('link', { name: pt.nav.projects })).toHaveAttribute(
+        'aria-current',
+        'true'
+      )
+    )
+
+    const marcados = within(menu)
+      .getAllByRole('link')
+      .filter((destino) => destino.hasAttribute('aria-current'))
+    expect(marcados).toHaveLength(1)
   })
 
   it('12.4 cobre todos os destinos declarados', async () => {
