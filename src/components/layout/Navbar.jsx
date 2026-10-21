@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { NAV_LINKS, SECTION_IDS } from '../../constants/site'
 import { DURATION, EASE_OUT_SOFT } from '../../constants/motion'
@@ -15,8 +15,10 @@ const MOBILE_MENU_ID = 'menu-navegacao'
 
 export default function Navbar() {
   const { t } = useTranslation()
+  const prefersReducedMotion = useReducedMotion()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [pendingTarget, setPendingTarget] = useState(null)
 
   const sectionIds = useMemo(() => NAV_LINKS.map((link) => link.id), [])
   const activeId = useActiveSection(sectionIds)
@@ -27,6 +29,27 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const handleMobileNavigate = (event, id) => {
+    if (!document.getElementById(id)) return
+    event.preventDefault()
+    event.currentTarget.blur()
+    setPendingTarget(id)
+    setMenuOpen(false)
+  }
+
+  const scrollToPendingTarget = () => {
+    if (pendingTarget === null) return
+    const target = document.getElementById(pendingTarget)
+    setPendingTarget(null)
+    if (!target) return
+
+    window.history.replaceState(null, '', `#${pendingTarget}`)
+    target.scrollIntoView({
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      block: 'start',
+    })
+  }
 
   const surfaceClass = scrolled
     ? 'border-line bg-bg/85 backdrop-blur-md'
@@ -87,7 +110,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={scrollToPendingTarget}>
         {menuOpen ? (
           <motion.div
             id={MOBILE_MENU_ID}
@@ -102,7 +125,7 @@ export default function Navbar() {
                 <li key={link.id}>
                   <a
                     href={`#${link.id}`}
-                    onClick={() => setMenuOpen(false)}
+                    onClick={(event) => handleMobileNavigate(event, link.id)}
                     className="flex min-h-[48px] items-center border-b border-line text-sm text-ink-muted transition-colors duration-300 last:border-0 hover:text-accent"
                   >
                     {t.nav[link.key]}
