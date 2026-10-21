@@ -6,13 +6,19 @@ const REPOS_PER_PAGE = 100
 const RECENT_REPOS_LIMIT = 6
 const EMPTY_STATS = { repos: 0, followers: 0, stars: 0 }
 
+function isOwnWork(repo) {
+  return !repo.fork && repo.name !== GITHUB_USERNAME
+}
+
 function sumStars(repos) {
-  return repos.reduce((total, repo) => total + (repo.stargazers_count ?? 0), 0)
+  return repos
+    .filter(isOwnWork)
+    .reduce((total, repo) => total + (repo.stargazers_count ?? 0), 0)
 }
 
 function selectShowcaseRepos(repos) {
   return repos
-    .filter((repo) => !repo.fork && repo.name !== GITHUB_USERNAME)
+    .filter(isOwnWork)
     .sort((first, second) => new Date(second.updated_at) - new Date(first.updated_at))
     .slice(0, RECENT_REPOS_LIMIT)
 }

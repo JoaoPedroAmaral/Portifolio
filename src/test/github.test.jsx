@@ -113,6 +113,21 @@ describe('Integração com GitHub', () => {
     expect(screen.queryByRole('heading', { name: 'JoaoPedroAmaral' })).toBeNull()
   })
 
+  it('4.10 conta estrelas apenas do trabalho próprio, sem bifurcações', async () => {
+    mockGitHub({
+      repos: [
+        makeRepo({ id: 20, name: 'proprio-a', stargazers_count: 3 }),
+        makeRepo({ id: 21, name: 'proprio-b', stargazers_count: 2 }),
+        makeRepo({ id: 22, name: 'bifurcado', stargazers_count: 99, fork: true }),
+        makeRepo({ id: 23, name: 'JoaoPedroAmaral', stargazers_count: 50 }),
+      ],
+    })
+    renderWithProviders(<Hero />)
+
+    await waitFor(() => expect(screen.getByText('5')).toBeInTheDocument())
+    expect(screen.queryByText('154')).toBeNull()
+  })
+
   it('4.9 ordena da atualização mais recente para a mais antiga', async () => {
     mockGitHub({
       repos: [
