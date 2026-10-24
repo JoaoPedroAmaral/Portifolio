@@ -15,4 +15,10 @@ module.exports = {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'react/prop-types': 'off',
   },
+  overrides: [
+    {
+      files: ['vite.config.js', 'vitest.config.js'],
+      env: { node: true, browser: false },
+    },
+  ],
 }
