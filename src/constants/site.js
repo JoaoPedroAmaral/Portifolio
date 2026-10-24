@@ -1,11 +1,13 @@
 export const GITHUB_USERNAME = 'JoaoPedroAmaral'
 
+const ASSET_BASE = import.meta.env.BASE_URL
+
 export const PROFILE = {
   firstName: 'João',
   middleName: 'Pedro',
   lastName: 'Amaral',
   fullName: 'João Pedro Amaral Rosa',
-  avatar: '/avatar.jpg',
+  avatar: `${ASSET_BASE}avatar.jpg`,
 }
 
 export const SOCIAL = {
