@@ -32,6 +32,8 @@ jobs:
       - run: npm run test:run
 
       - run: npm run build
+        env:
+          VITE_BASE: /Portifolio/
 
       - uses: actions/configure-pages@v5
 
